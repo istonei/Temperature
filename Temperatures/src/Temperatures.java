@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Temperatures {
 
+	//array for months and temps
 	static int[][] temperature = new int[12][2];
 
 	
