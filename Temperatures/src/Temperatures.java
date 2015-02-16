@@ -9,6 +9,7 @@ public class Temperatures {
 	
 	public static void main(String[] args) {
 		
+		//display average, high low, and dates of temperatures
 		inputTempForYear();
 		System.out.println("Average high temperature of year: " + calculateAverageHigh(temperature));
 		System.out.println("Average low temperature of year: " + calculateAverageLow(temperature));
@@ -19,17 +20,20 @@ public class Temperatures {
 	}
 	public static void inputTempForMonth(int month, int[][] i)
 	{
+		//get highest temperature for month
 		System.out.println("Enter highest temperature for " + monthName(month));
 		Scanner keyboard = new Scanner(System.in);
 		int hightemp = keyboard.nextInt();
 		i[month][0] = hightemp;
 		
+		//get the lowest temperature for month
 		System.out.println("Enter the low temperature for " + monthName(month));
 		int lowtemp = keyboard.nextInt();
 		i[month][1] = lowtemp;
 	}
 	public static int[][] inputTempForYear()
 	{
+		//input temp for year
 		for(int j=0; j < temperature.length; j++)
 		inputTempForMonth(j, temperature);
 		
@@ -47,6 +51,7 @@ public class Temperatures {
 	}
 	public static int calculateAverageLow(int[][] i)
 	{
+		//get average of lowest temps
 		int total = 0;
 		int average = 0;
 		for (int j=0; j < i.length; j++)
@@ -56,6 +61,7 @@ public class Temperatures {
 	}
 	public static int findHighestTemp(int[][] i)
 	{
+		//get highest temp
 		int temp = i[0][0];
 		int high = 0;
 		for(int j = 1; j < i.length; j++)
@@ -70,6 +76,7 @@ public class Temperatures {
 	}
 	public static int findLowestTemp(int[][] i)
 	{
+		//find the lowest temp
 		int temp = i[0][1];
 		int low = 0;
 		for (int j = 1; j < i.length; j++)
@@ -84,6 +91,7 @@ public class Temperatures {
 	}
 	public static String monthName(int i)
 	{
+		//display months
 		String monthName1;
 		
 		switch(i)
